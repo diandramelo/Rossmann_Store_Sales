@@ -2,6 +2,8 @@
 
 Drugstore Sales Forecast with Machine Learning.
 
+*(This README is under construction :D)*
+
 ![Image](img/README_banner.png)
 
 *This Data Science project presents a sales prediction for one of the largest drugstore chains in Europe, called Rossmann. It is a German company with more than 3,000 stores located across seven European countries. The project was inspired in a database available from a [Kaggle competition](https://www.kaggle.com/c/rossmann-store-sales/overview).*
@@ -17,8 +19,7 @@ Here is what I will cover:
 - 2.[ Data Description](#data-description)
 - 3.[ Exploratory Data Analysis](#exploratory-data-analysis)
 - 4.[ Machine Learning Modelling](#machine-learning-modelling)
-- 5.[ Project Outcomes](#project-outcomes)
-- 6.[ Conclusion](#conclusion)
+- 5.[ Conclusion](#conclusion)
 - [Special Thanks](special-thanks)
 - [References](#references)
 
@@ -56,27 +57,49 @@ The used data consists of specific information regarding sales data for 1,115 Ro
 - Competition
   - Distance, open since
 - Promotion
-  - Period of promo, if there was a consecutive promo
-  
+  - Period of promo, if there was a consecutive promo  
 
+Since they don't bring any sales information, closed stores or stores without revenues were excluded from the model.
 
 ### Feature Engineering
 
+It is a hard task to find the best way to work with your data, but it normally starts with highlighting relevant information and removing noise. Besides, feature engineering process is very objective: consists of turning raw data into a numeric table without missing values.
+
+ - **Missing Values:** as many machine learning algorithms do not support missing values, when facing missing values there are three main options for fillout them:
+    - Delete them by **erasing rows with missing values**, which is a quick and simple method but may remove relevant data for other features;
+    - Use ML algorithms that are able **replace empty columns with the column's own behavior** (such as median, average, prediction of behavior for not NA rows); or
+    - Understanding the business and **imputing the NAs with coherent values**, which means *"why is this NA here? It may be a business logic that, when understood, will allow you to replace these NAs with values in some way?"*. 
+
+- **Business Case Hypothesis**:
+![MindMap](img/Daily_Store_Sales.png)
+- **Variable filtering**: 
+- **Rescaling**: 
+- **Transformation**:
+  - Response variable transformation: 
+  - Encoding: 
+  - Nature transformation: 
+
 ## Exploratory Data Analysis
 
+univariate, bivariate, and multivariate analyses were conducted. We validated the hypothesis list built previously in the bivariate analysis: 
+(TABLE)
+
 ## Machine Learning Modelling
+
+For working on Machine Learning algorithms, the projects data was into training and validation sets:
+
+- Training data corresponds to all data entries between 2013-01-01 to 2015-06-19
+- Validation data contains entries from the last 6 weeks of available data, 2015-06-19 to 2015-07-31
+- Test data corresponds to data entries between 2015-07-31 to 2015-09-16. This data doesn't have the target variable sales and will be used as the input to generate predictions in production;
+
 - Regression
 - Time Series
 
-## Project Outcomes
-
-### Business Performance
-
-### ML Performance
-
-## Model Deployment
-
 ## Conclusion
+
+From retrieving and cleaning the company's data, conducting descriptive statistics analysis, modeling the machine learning algorithms for regression, to grasp the main ideas behind deployment and production environment settings, this project was challenging in many ways.
+
+For checking the outcomes, please dive into the slide presentation created for Business Storytelling [here](Project_Storytelling.pdf).
 
 ## Special Thanks
 
